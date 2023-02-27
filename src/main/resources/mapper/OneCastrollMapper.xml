@@ -59,4 +59,76 @@
         on duplicate key update
         up_roll_montor_a=values(up_roll_montor_a)
     </insert>
+
+    <!--批量插入 存在更新 不存在更新-->
+    <insert id="saveBatchTwoCast" parameterType="java.util.List">
+        insert into two_castroll( <include refid="Base_Column_List"/> )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.ts},#{item.upRollMontorA},#{item.upRollMontorLineV},
+            #{item.downRollMontorA},#{item.downRollMontorLineV},#{item.pumpA},
+            #{item.pumpF},#{item.rollA},#{item.rollV},
+            #{item.inWaterT},#{item.inWaterFn},#{item.upRollWaterFn},
+            #{item.upRollWaterT},#{item.upRollFlow},#{item.downRollWaterFn},
+            #{item.downRollWaterT},#{item.downRollFlow},#{item.operationPreloadForce},
+            #{item.transPreloadForce},#{item.rollTension},#{item.rollDiameter},
+            #{item.tiWireSpeed},#{item.withMaterialSpeed},#{item.createTime})
+        </foreach>
+        on duplicate key update
+        up_roll_montor_a=values(up_roll_montor_a)
+    </insert>
+
+    <!--批量插入 存在更新 不存在更新-->
+    <insert id="saveBatchThreeCast" parameterType="java.util.List">
+        insert into three_castroll( <include refid="Base_Column_List"/> )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.ts},#{item.upRollMontorA},#{item.upRollMontorLineV},
+            #{item.downRollMontorA},#{item.downRollMontorLineV},#{item.pumpA},
+            #{item.pumpF},#{item.rollA},#{item.rollV},
+            #{item.inWaterT},#{item.inWaterFn},#{item.upRollWaterFn},
+            #{item.upRollWaterT},#{item.upRollFlow},#{item.downRollWaterFn},
+            #{item.downRollWaterT},#{item.downRollFlow},#{item.operationPreloadForce},
+            #{item.transPreloadForce},#{item.rollTension},#{item.rollDiameter},
+            #{item.tiWireSpeed},#{item.withMaterialSpeed},#{item.createTime})
+        </foreach>
+        on duplicate key update
+        up_roll_montor_a=values(up_roll_montor_a)
+    </insert>
+
+    <!--批量插入 存在更新 不存在更新-->
+    <insert id="saveBatchFourCast" parameterType="java.util.List">
+        insert into four_castroll( <include refid="Base_Column_List"/> )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.ts},#{item.upRollMontorA},#{item.upRollMontorLineV},
+            #{item.downRollMontorA},#{item.downRollMontorLineV},#{item.pumpA},
+            #{item.pumpF},#{item.rollA},#{item.rollV},
+            #{item.inWaterT},#{item.inWaterFn},#{item.upRollWaterFn},
+            #{item.upRollWaterT},#{item.upRollFlow},#{item.downRollWaterFn},
+            #{item.downRollWaterT},#{item.downRollFlow},#{item.operationPreloadForce},
+            #{item.transPreloadForce},#{item.rollTension},#{item.rollDiameter},
+            #{item.tiWireSpeed},#{item.withMaterialSpeed},#{item.createTime})
+        </foreach>
+        on duplicate key update
+        up_roll_montor_a=values(up_roll_montor_a)
+    </insert>
+
+    <!--批量插入 存在更新 不存在更新-->
+    <insert id="saveBatchFiveCast" parameterType="java.util.List">
+        insert into five_castroll( <include refid="Base_Column_List"/> )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.ts},#{item.upRollMontorA},#{item.upRollMontorLineV},
+            #{item.downRollMontorA},#{item.downRollMontorLineV},#{item.pumpA},
+            #{item.pumpF},#{item.rollA},#{item.rollV},
+            #{item.inWaterT},#{item.inWaterFn},#{item.upRollWaterFn},
+            #{item.upRollWaterT},#{item.upRollFlow},#{item.downRollWaterFn},
+            #{item.downRollWaterT},#{item.downRollFlow},#{item.operationPreloadForce},
+            #{item.transPreloadForce},#{item.rollTension},#{item.rollDiameter},
+            #{item.tiWireSpeed},#{item.withMaterialSpeed},#{item.createTime})
+        </foreach>
+        on duplicate key update
+        up_roll_montor_a=values(up_roll_montor_a)
+    </insert>
 </mapper>

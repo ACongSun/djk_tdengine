@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
  * @Description 获取TDengine数据的工具类
  */
 
-public class TDengineData<T> {
+public class TDengineData {
 
     /**
      * 获取TDengine数据
@@ -30,13 +30,13 @@ public class TDengineData<T> {
      * @throws IOException
      */
     public List<Map<String, String>> getTDengineData(MachineTypeEnum machineType, String sql) throws SQLException, IOException {
-        DataSourceParamDto dataSource = new DataSourceParamDto();
-        /*DataSourceParamDto dataSource = new DataSourceParamDto()
+        //DataSourceParamDto dataSource = new DataSourceParamDto();
+        DataSourceParamDto dataSource = new DataSourceParamDto()
                 .setHost("10.82.23.161")
                 .setPort(6041)
                 .setDatabase("thingsboard")
                 .setUsername("root")
-                .setPassword("taosdata");*/
+                .setPassword("taosdata");
         List<Map<String, String>> result = queryResult(dataSource, sql, machineType);
         return result;
     }
@@ -50,19 +50,18 @@ public class TDengineData<T> {
         String[] cols = MachineTypeEnum.getColsCastRoll(machineType);
 
         /** 以下是测试环境的代码 */
-        String resp = HttpRequest.post(
+        /*String resp = HttpRequest.post(
                 "https://" +
                 "console-mock.apipost.cn" +
                 "/mock/5eecb9fa-eb84-4f06-86b2-a7f7bf6876b8" +
-                "/tdengine")
+                "/tdengine1")
                 .charset("utf-8")
                 .header("Authorization", "Basic cm9vdDp0YW9zZGF0YQ==")
                 .body(sql)
                 .execute()
-                .body();
-
+                .body();*/
         /** 以下是真实环境的代码 */
-/*        String user = dataSource.getUsername();
+        String user = dataSource.getUsername();
         String password = dataSource.getPassword();
         String encode = Base64.encode(user + ":" + password);
         String resp =
@@ -77,7 +76,7 @@ public class TDengineData<T> {
                         .header("Authorization", "Basic " + encode)
                         .body(sql)
                         .execute()
-                        .body();*/
+                        .body();
         /** 以上是真实环境的代码 */
 
         TdengineResult result = JSON.parseObject(resp, TdengineResult.class);
@@ -103,6 +102,7 @@ public class TDengineData<T> {
             }
         );
         return res;
+
     }
 
     /**

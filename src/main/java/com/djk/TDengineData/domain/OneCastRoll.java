@@ -11,7 +11,7 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
- *
+ * 铸轧机实体类
  * @TableName one_castroll
  */
 @TableName(value ="one_castroll")
@@ -27,112 +27,112 @@ public class OneCastRoll implements Serializable {
     /**
      * 上辊电机电流
      */
-    private Integer upRollMontorA;
+    private Double upRollMontorA;
 
     /**
      * 上辊电机线速度
      */
-    private Integer upRollMontorLineV;
+    private Double upRollMontorLineV;
 
     /**
      * 下辊电机电流
      */
-    private Integer downRollMontorA;
+    private Double downRollMontorA;
 
     /**
      * 下辊电机线速度
      */
-    private Integer downRollMontorLineV;
+    private Double downRollMontorLineV;
 
     /**
      * 水泵电流
      */
-    private Integer pumpA;
+    private Double pumpA;
 
     /**
      * 水泵频率
      */
-    private Integer pumpF;
+    private Double pumpF;
 
     /**
      * 卷取电流
      */
-    private Integer rollA;
+    private Double rollA;
 
     /**
      * 卷取速度
      */
-    private Integer rollV;
+    private Double rollV;
 
     /**
      * 入口水温
      */
-    private Integer inWaterT;
+    private Double inWaterT;
 
     /**
      * 入口水压
      */
-    private Integer inWaterFn;
+    private Double inWaterFn;
 
     /**
      * 上辊水压
      */
-    private Integer upRollWaterFn;
+    private Double upRollWaterFn;
 
     /**
      * 上辊水温
      */
-    private Integer upRollWaterT;
+    private Double upRollWaterT;
 
     /**
      * 上辊流量
      */
-    private Integer upRollFlow;
+    private Double upRollFlow;
 
     /**
      * 下辊水压
      */
-    private Integer downRollWaterFn;
+    private Double downRollWaterFn;
 
     /**
      * 下辊水温
      */
-    private Integer downRollWaterT;
+    private Double downRollWaterT;
 
     /**
      * 下辊流量
      */
-    private Integer downRollFlow;
+    private Double downRollFlow;
 
     /**
      * 操作侧预载力
      */
-    private Integer operationPreloadForce;
+    private Double operationPreloadForce;
 
     /**
      * 传动侧预载力
      */
-    private Integer transPreloadForce;
+    private Double transPreloadForce;
 
     /**
      * 卷取机张力
      */
-    private Integer rollTension;
+    private Double rollTension;
 
     /**
      * 卷取卷径
      */
-    private Integer rollDiameter;
+    private Double rollDiameter;
 
     /**
      * 钛丝速度
      */
-    private Integer tiWireSpeed;
+    private Double tiWireSpeed;
 
     /**
      * 带材速度
      */
-    private Integer withMaterialSpeed;
+    private Double withMaterialSpeed;
 
     /**
      * 插入时间

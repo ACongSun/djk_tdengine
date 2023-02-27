@@ -14,5 +14,5 @@ public interface OneCastrollService extends IService<OneCastRoll> {
      * 批量插入 存在更新 不存在插入
      * @return
      */
-    String saveBatchOneCast(String sql);
+    String saveBatchOneCast(String sql, Integer machineNum);
 }

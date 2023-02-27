@@ -28,7 +28,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @EnableScheduling
-@RequestMapping("/oneCastRoll")
+@RequestMapping("/castRoll")
 public class OneCastRollController {
 
     @Resource
@@ -39,40 +39,49 @@ public class OneCastRollController {
     @GetMapping("/oneCast")
     public String oneCast(){
         String sql = "SELECT * FROM t_3d8761c0928d11ed8fbe65289e32d77e where ts > now - 5s;";
-        String isSucc = oneCastrollService.saveBatchOneCast(sql);
-        log.info(isSucc + LocalDateTime.now());
+        String isSucc = oneCastrollService.saveBatchOneCast(sql, 1);
+        log.info("oneCast" + isSucc + LocalDateTime.now());
         return isSucc;
     }
 
-    //@Scheduled(fixedRateString = "${taskTime.twoCast}")
-    //@Async("asyncServiceExecutor")
-    //@GetMapping("/twoCast")
-    //public String twoCast(){
-    //    System.out.println("twoCast" + LocalDateTime.now());
-    //    return null;
-    //}
-    //
-    //@Scheduled(fixedRateString = "${taskTime.threeCast}")
-    //@Async("asyncServiceExecutor")
-    //@GetMapping("/threeCast")
-    //public String threeCast(){
-    //    System.out.println("threeCast" + LocalDateTime.now());
-    //    return null;
-    //}
-    //
-    //@Scheduled(fixedRateString = "${taskTime.fourCast}")
-    //@Async("asyncServiceExecutor")
-    //@GetMapping("/fourCast")
-    //public String fourCast(){
-    //    System.out.println("fourCast" + LocalDateTime.now());
-    //    return null;
-    //}
-    //
-    //@Scheduled(fixedRateString = "${taskTime.fiveCast}")
-    //@Async("asyncServiceExecutor")
-    //@GetMapping("/fiveCast")
-    //public String fiveCast(){
-    //    System.out.println("fiveCast" + LocalDateTime.now());
-    //    return null;
-    //}
+    @Scheduled(fixedRateString = "${taskTime.twoCast}")
+    @Async("asyncServiceExecutor")
+    @GetMapping("/twoCast")
+    public String twoCast(){
+        String sql = "SELECT * FROM t_31daa490928d11ed8fbe65289e32d77e where ts > now - 5s;";
+        String isSucc = oneCastrollService.saveBatchOneCast(sql, 2);
+        log.info("twoCast" + isSucc + LocalDateTime.now());
+        return isSucc;
+    }
+
+
+    @Scheduled(fixedRateString = "${taskTime.threeCast}")
+    @Async("asyncServiceExecutor")
+    @GetMapping("/threeCast")
+    public String threeCast(){
+        String sql = "SELECT * FROM t_3d8761c0928d11ed8fbe65289e32d77e where ts > now - 5s;";
+        String isSucc = oneCastrollService.saveBatchOneCast(sql, 3);
+        log.info("threeCast" + isSucc + LocalDateTime.now());
+        return isSucc;
+    }
+
+    @Scheduled(fixedRateString = "${taskTime.fourCast}")
+    @Async("asyncServiceExecutor")
+    @GetMapping("/fourCast")
+    public String fourCast(){
+        String sql = "SELECT * FROM t_48d24fe0928d11ed8fbe65289e32d77e where ts > now - 5s;";
+        String isSucc = oneCastrollService.saveBatchOneCast(sql, 4);
+        log.info("fourCast" + isSucc + LocalDateTime.now());
+        return isSucc;
+    }
+
+    @Scheduled(fixedRateString = "${taskTime.fiveCast}")
+    @Async("asyncServiceExecutor")
+    @GetMapping("/fiveCast")
+    public String fiveCast(){
+        String sql = "SELECT * FROM t_58a64890928d11ed8fbe65289e32d77e where ts > now - 5s;";
+        String isSucc = oneCastrollService.saveBatchOneCast(sql, 5);
+        log.info("fiveCast" + isSucc + LocalDateTime.now());
+        return isSucc;
+    }
 }

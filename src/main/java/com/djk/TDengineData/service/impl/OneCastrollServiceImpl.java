@@ -31,20 +31,39 @@ public class OneCastrollServiceImpl extends ServiceImpl<OneCastrollMapper, OneCa
     OneCastrollMapper oneCastrollMapper;
 
     @Override
-    public String saveBatchOneCast(String sql) {
+    public String saveBatchOneCast(String sql, Integer machineNum) {
         try {
-            List<Map<String, String>> list = new TDengineData().getTDengineData(MachineTypeEnum.COLSCASTROLL1, sql);
+            List<Map<String, String>> list =  new TDengineData().getTDengineData(MachineTypeEnum.COLSCASTROLL, sql);
+            List<OneCastRoll> castrollList = new ArrayList<>();
             if (list == null || list.size() == 0){
                 return "暂无新数据";
             }
-            List<OneCastRoll> castrollList = new ArrayList<>();
             list.forEach(
                     item ->{
-                        com.djk.TDengineData.domain.OneCastRoll oneCastroll = JSON.parseObject(JSON.toJSONString(item), com.djk.TDengineData.domain.OneCastRoll.class);
+                        OneCastRoll oneCastroll = JSON.parseObject(JSON.toJSONString(item), OneCastRoll.class);
                         castrollList.add(oneCastroll);
                     }
             );
-            Boolean isSucc = oneCastrollMapper.saveBatchOneCast(castrollList);
+            Boolean isSucc = null;
+            switch (machineNum){
+                case 1:
+                    isSucc = oneCastrollMapper.saveBatchOneCast(castrollList);
+                    break;
+                case 2:
+                    isSucc = oneCastrollMapper.saveBatchTwoCast(castrollList);
+                    break;
+                case 3:
+                    isSucc = oneCastrollMapper.saveBatchThreeCast(castrollList);
+                    break;
+                case 4:
+                    isSucc = oneCastrollMapper.saveBatchFourCast(castrollList);
+                    break;
+                case 5:
+                    isSucc = oneCastrollMapper.saveBatchFiveCast(castrollList);
+                    break;
+                default:
+                    break;
+            }
             if (isSucc){
                 return "成功";
             }

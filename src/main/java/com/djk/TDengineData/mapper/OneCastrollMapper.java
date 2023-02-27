@@ -16,10 +16,39 @@ import java.util.List;
 public interface OneCastrollMapper extends BaseMapper<OneCastRoll> {
 
     /**
+     * 1#铸机轧辊数据
      * 批量插入 存在更新 不存在插入
      * @return
      */
     Boolean saveBatchOneCast(List<OneCastRoll> list);
+
+    /**
+     * 2#铸机轧辊数据
+     * 批量插入 存在更新 不存在插入
+     * @return
+     */
+    Boolean saveBatchTwoCast(List<OneCastRoll> list);
+
+    /**
+     * 3#铸机轧辊数据
+     * 批量插入 存在更新 不存在插入
+     * @return
+     */
+    Boolean saveBatchThreeCast(List<OneCastRoll> list);
+
+    /**
+     * 4#铸机轧辊数据
+     * 批量插入 存在更新 不存在插入
+     * @return
+     */
+    Boolean saveBatchFourCast(List<OneCastRoll> list);
+
+    /**
+     * 5#铸机轧辊数据
+     * 批量插入 存在更新 不存在插入
+     * @return
+     */
+    Boolean saveBatchFiveCast(List<OneCastRoll> list);
 }
 
 
