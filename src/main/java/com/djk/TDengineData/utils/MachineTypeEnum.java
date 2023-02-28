@@ -1,4 +1,4 @@
-package com.djk.TDengineData.dto;
+package com.djk.TDengineData.utils;
 
 public enum MachineTypeEnum {
 
@@ -29,7 +29,13 @@ public enum MachineTypeEnum {
                         ,"materialWidth","meteriaThicness","discShearOperatingSideA","discShearDriveSideA","crusherOperatingSideA","driveSideCrusherA"
                         , "openRollThinOilT","rollOutThinOilT"};
             case QUENCHINGFURNACE:
-                return new String[2];
+                return new String[]{"ts", "zoneOneT", "zoneTwoT", "zoneThreeT", "meterialT",
+                        "zoneOneHotOutput", "zoneTwoHotOutput", "zoneThreeHotOutput", "setT",
+                        "desiredT", "exhaustFanSetF", "inFanSetF", "controlType", "materialControlT",
+                        "warnSetT", "crusherOperatingSideA", "furnaceDoorCoolWater", "funCoolWater",
+                        "returnWaterHighT", "coolWaterUpLimit", "compressedAirOneLowPressure",
+                        "compressedAirTwoLowPressure", "upT", "maintainT", "downT", "annealingEnd",
+                        "purgeCoolValue", "smokeExhaustOutputValue"};
             default:
                 return new String[1];
         }

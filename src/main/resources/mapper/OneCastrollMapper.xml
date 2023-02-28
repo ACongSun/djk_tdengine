@@ -6,28 +6,28 @@
 
     <resultMap id="BaseResultMap" type="com.djk.TDengineData.domain.OneCastRoll">
             <id property="ts" column="ts" jdbcType="TIMESTAMP"/>
-            <result property="upRollMontorA" column="up_roll_montor_a" jdbcType="INTEGER"/>
-            <result property="upRollMontorLineV" column="up_roll_montor_line_v" jdbcType="INTEGER"/>
-            <result property="downRollMontorA" column="down_roll_montor_a" jdbcType="INTEGER"/>
-            <result property="downRollMontorLineV" column="down_roll_montor_line_v" jdbcType="INTEGER"/>
-            <result property="pumpA" column="pump_a" jdbcType="INTEGER"/>
-            <result property="pumpF" column="pump_f" jdbcType="INTEGER"/>
-            <result property="rollA" column="roll_a" jdbcType="INTEGER"/>
-            <result property="rollV" column="roll_v" jdbcType="INTEGER"/>
-            <result property="inWaterT" column="in_water_t" jdbcType="INTEGER"/>
-            <result property="inWaterFn" column="in_water_fn" jdbcType="INTEGER"/>
-            <result property="upRollWaterFn" column="up_roll_water_fn" jdbcType="INTEGER"/>
-            <result property="upRollWaterT" column="up_roll_water_t" jdbcType="INTEGER"/>
-            <result property="upRollFlow" column="up_roll_flow" jdbcType="INTEGER"/>
-            <result property="downRollWaterFn" column="down_roll_water_fn" jdbcType="INTEGER"/>
-            <result property="downRollWaterT" column="down_roll_water_t" jdbcType="INTEGER"/>
-            <result property="downRollFlow" column="down_roll_flow" jdbcType="INTEGER"/>
-            <result property="operationPreloadForce" column="operation_preload_force" jdbcType="INTEGER"/>
-            <result property="transPreloadForce" column="trans_preload_force" jdbcType="INTEGER"/>
-            <result property="rollTension" column="roll_tension" jdbcType="INTEGER"/>
-            <result property="rollDiameter" column="roll_diameter" jdbcType="INTEGER"/>
-            <result property="tiWireSpeed" column="ti_wire_speed" jdbcType="INTEGER"/>
-            <result property="withMaterialSpeed" column="with_material_speed" jdbcType="INTEGER"/>
+            <result property="upRollMontorA" column="up_roll_montor_a" jdbcType="DOUBLE"/>
+            <result property="upRollMontorLineV" column="up_roll_montor_line_v" jdbcType="DOUBLE"/>
+            <result property="downRollMontorA" column="down_roll_montor_a" jdbcType="DOUBLE"/>
+            <result property="downRollMontorLineV" column="down_roll_montor_line_v" jdbcType="DOUBLE"/>
+            <result property="pumpA" column="pump_a" jdbcType="DOUBLE"/>
+            <result property="pumpF" column="pump_f" jdbcType="DOUBLE"/>
+            <result property="rollA" column="roll_a" jdbcType="DOUBLE"/>
+            <result property="rollV" column="roll_v" jdbcType="DOUBLE"/>
+            <result property="inWaterT" column="in_water_t" jdbcType="DOUBLE"/>
+            <result property="inWaterFn" column="in_water_fn" jdbcType="DOUBLE"/>
+            <result property="upRollWaterFn" column="up_roll_water_fn" jdbcType="DOUBLE"/>
+            <result property="upRollWaterT" column="up_roll_water_t" jdbcType="DOUBLE"/>
+            <result property="upRollFlow" column="up_roll_flow" jdbcType="DOUBLE"/>
+            <result property="downRollWaterFn" column="down_roll_water_fn" jdbcType="DOUBLE"/>
+            <result property="downRollWaterT" column="down_roll_water_t" jdbcType="DOUBLE"/>
+            <result property="downRollFlow" column="down_roll_flow" jdbcType="DOUBLE"/>
+            <result property="operationPreloadForce" column="operation_preload_force" jdbcType="DOUBLE"/>
+            <result property="transPreloadForce" column="trans_preload_force" jdbcType="DOUBLE"/>
+            <result property="rollTension" column="roll_tension" jdbcType="DOUBLE"/>
+            <result property="rollDiameter" column="roll_diameter" jdbcType="DOUBLE"/>
+            <result property="tiWireSpeed" column="ti_wire_speed" jdbcType="DOUBLE"/>
+            <result property="withMaterialSpeed" column="with_material_speed" jdbcType="DOUBLE"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 

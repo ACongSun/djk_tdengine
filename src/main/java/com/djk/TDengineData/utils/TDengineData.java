@@ -3,9 +3,7 @@ package com.djk.TDengineData.utils;
 import cn.hutool.core.codec.Base64;
 import cn.hutool.http.HttpRequest;
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.TypeReference;
 import com.djk.TDengineData.dto.DataSourceParamDto;
-import com.djk.TDengineData.dto.MachineTypeEnum;
 import com.djk.TDengineData.dto.TdengineResult;
 
 import java.io.IOException;
@@ -54,7 +52,7 @@ public class TDengineData {
                 "https://" +
                 "console-mock.apipost.cn" +
                 "/mock/5eecb9fa-eb84-4f06-86b2-a7f7bf6876b8" +
-                "/tdengine1")
+                "/tdengine3")
                 .charset("utf-8")
                 .header("Authorization", "Basic cm9vdDp0YW9zZGF0YQ==")
                 .body(sql)

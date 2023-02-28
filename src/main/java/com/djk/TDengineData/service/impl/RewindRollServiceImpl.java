@@ -3,7 +3,7 @@ package com.djk.TDengineData.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.djk.TDengineData.domain.RewindRoll;
-import com.djk.TDengineData.dto.MachineTypeEnum;
+import com.djk.TDengineData.utils.MachineTypeEnum;
 import com.djk.TDengineData.service.RewindRollService;
 import com.djk.TDengineData.mapper.RewindRollMapper;
 import com.djk.TDengineData.utils.TDengineData;

@@ -3,7 +3,7 @@ package com.djk.TDengineData.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.djk.TDengineData.domain.OneCastRoll;
-import com.djk.TDengineData.dto.MachineTypeEnum;
+import com.djk.TDengineData.utils.MachineTypeEnum;
 import com.djk.TDengineData.service.OneCastrollService;
 import com.djk.TDengineData.mapper.OneCastrollMapper;
 import com.djk.TDengineData.utils.TDengineData;

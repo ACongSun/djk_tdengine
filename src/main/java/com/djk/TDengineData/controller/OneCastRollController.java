@@ -1,9 +1,6 @@
 package com.djk.TDengineData.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.djk.TDengineData.dto.MachineTypeEnum;
 import com.djk.TDengineData.service.OneCastrollService;
-import com.djk.TDengineData.utils.TDengineData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -13,12 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.io.IOException;
-import java.sql.SQLException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @author 孙少聪
@@ -84,4 +76,5 @@ public class OneCastRollController {
         log.info("fiveCast" + isSucc + LocalDateTime.now());
         return isSucc;
     }
+
 }
