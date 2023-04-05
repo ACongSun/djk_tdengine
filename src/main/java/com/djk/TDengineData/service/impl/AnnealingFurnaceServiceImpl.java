@@ -21,6 +21,7 @@ import java.util.Map;
 * @description 针对表【annealing_furnace】的数据库操作Service实现
 * @createDate 2023-02-28 09:46:14
 */
+
 @Service
 public class AnnealingFurnaceServiceImpl extends ServiceImpl<AnnealingFurnaceMapper, AnnealingFurnace>
     implements AnnealingFurnaceService{

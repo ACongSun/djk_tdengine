@@ -36,64 +36,63 @@ public class AnnealingFurnaceController {
         return isSucc;
     }
 
-    //@Scheduled(fixedRateString = "${taskTime.twoAnneaFur}")
-    //@Async("asyncServiceExecutor")
+    @Scheduled(fixedRateString = "${taskTime.twoAnneaFur}")
+    @Async("asyncServiceExecutor")
     @GetMapping("/twoAnneaFur")
     public String annealingFurnaceTwo(){
-        String sql = "select * from t_33b552e0944c11ed8fbe65289e32d77e where ts > now - 5s;";
+        String sql = "select * from t_2ed846c0a62511ed8b62ff846936488a where ts > now - 5s;";
         String isSucc = annealingFurnaceService.saveBatchoneAnneaFur(sql, 2);
         log.info("twoAnneaFur" + isSucc + LocalDateTime.now());
         return isSucc;
     }
 
-    //@Scheduled(fixedRateString = "${taskTime.threeAnneaFur}")
-    //@Async("asyncServiceExecutor")
+    @Scheduled(fixedRateString = "${taskTime.threeAnneaFur}")
+    @Async("asyncServiceExecutor")
     @GetMapping("/threeAnneaFur")
     public String annealingFurnaceThree(){
-        String sql = "select * from t_3fd51d30944c11ed8fbe65289e32d77e where ts > now - 5s;";
+        String sql = "select * from t_37e21e80a62511ed8b62ff846936488a where ts > now - 5s;";
         String isSucc = annealingFurnaceService.saveBatchoneAnneaFur(sql, 3);
         log.info("threeAnneaFur" + isSucc + LocalDateTime.now());
         return isSucc;
     }
 
-    //@Scheduled(fixedRateString = "${taskTime.fourAnneaFur}")
-    //@Async("asyncServiceExecutor")
+    @Scheduled(fixedRateString = "${taskTime.fourAnneaFur}")
+    @Async("asyncServiceExecutor")
     @GetMapping("/fourAnneaFur")
     public String annealingFurnaceFour(){
-        String sql = "select * from t_57de86a0944c11ed8fbe65289e32d77e where ts > now - 5s;";
+        String sql = "select * from t_4085e170a62511ed8b62ff846936488a where ts > now - 5s;";
         String isSucc = annealingFurnaceService.saveBatchoneAnneaFur(sql, 4);
         log.info("fourAnneaFur" + isSucc + LocalDateTime.now());
         return isSucc;
     }
 
-    //@Scheduled(fixedRateString = "${taskTime.fiveAnneaFur}")
-    //@Async("asyncServiceExecutor")
+    @Scheduled(fixedRateString = "${taskTime.fiveAnneaFur}")
+    @Async("asyncServiceExecutor")
     @GetMapping("/fiveAnneaFur")
     public String annealingFurnaceFive(){
-        String sql = "select * from t_64ad0780944c11ed8fbe65289e32d77e where ts > now - 5s;";
+        String sql = "select * from t_48b42640a62511ed8b62ff846936488a where ts > now - 5s;";
         String isSucc = annealingFurnaceService.saveBatchoneAnneaFur(sql, 5);
         log.info("fiveAnneaFur" + isSucc + LocalDateTime.now());
         return isSucc;
     }
 
-    //@Scheduled(fixedRateString = "${taskTime.sixAnneaFur}")
-    //@Async("asyncServiceExecutor")
+    @Scheduled(fixedRateString = "${taskTime.sixAnneaFur}")
+    @Async("asyncServiceExecutor")
     @GetMapping("/sixAnneaFur")
     public String annealingFurnaceSix(){
-        String sql = "select * from t_703a2ec0944c11ed8fbe65289e32d77e where ts > now - 5s;";
+        String sql = "select * from t_51af30f0a62511ed8b62ff846936488a where ts > now - 5s;";
         String isSucc = annealingFurnaceService.saveBatchoneAnneaFur(sql, 6);
         log.info("sixAnneaFur" + isSucc + LocalDateTime.now());
         return isSucc;
     }
 
-    //@Scheduled(fixedRateString = "${taskTime.sevenAnneaFur}")
-    //@Async("asyncServiceExecutor")
+    @Scheduled(fixedRateString = "${taskTime.sevenAnneaFur}")
+    @Async("asyncServiceExecutor")
     @GetMapping("/sevenAnneaFur")
     public String annealingFurnaceSeven(){
-        String sql = "select * from t_7b611a20944c11ed8fbe65289e32d77e where ts > now - 5s;";
+        String sql = "select * from t_60cc35b0a62511ed8b62ff846936488a where ts > now - 5s;";
         String isSucc = annealingFurnaceService.saveBatchoneAnneaFur(sql, 7);
         log.info("sevenAnneaFur" + isSucc + LocalDateTime.now());
         return isSucc;
     }
-
 }
