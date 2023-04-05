@@ -104,7 +104,13 @@ public class AnnealingFurnaceServiceImpl extends ServiceImpl<AnnealingFurnaceMap
                 list.forEach(
                         item -> {
                             ts.add(item.get("ts"));
-                            sx.add(Double.parseDouble(item.get(type)));
+                            if ("false".equals(item.get(type))){
+                                sx.add(0.0);
+                            }else if ("true".equals(item.get(type))){
+                                sx.add(1.0);
+                            }else{
+                                sx.add(Double.parseDouble(item.get(type)));
+                            }
                         }
                 );
             }
