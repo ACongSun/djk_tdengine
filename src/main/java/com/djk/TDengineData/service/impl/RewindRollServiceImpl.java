@@ -7,6 +7,7 @@ import com.djk.TDengineData.utils.MachineTypeEnum;
 import com.djk.TDengineData.service.RewindRollService;
 import com.djk.TDengineData.mapper.RewindRollMapper;
 import com.djk.TDengineData.utils.TDengineData;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -22,6 +23,7 @@ import java.util.Map;
 * @createDate 2023-02-27 17:38:02
 */
 @Service
+@Slf4j
 public class RewindRollServiceImpl extends ServiceImpl<RewindRollMapper, RewindRoll>
     implements RewindRollService{
 
@@ -55,6 +57,45 @@ public class RewindRollServiceImpl extends ServiceImpl<RewindRollMapper, RewindR
             return "连接异常";
         }
     }
+
+    @Override
+    public ArrayList<Object> getHistoryList(String sql, String type) {
+        ArrayList<Object> objects = new ArrayList<>();
+        ArrayList<String> ts = new ArrayList<>();
+        ArrayList<Double> sx = new ArrayList<>();
+        String[] colsrewindRoll = MachineTypeEnum.getColsCastRoll(MachineTypeEnum.REWINDROLL);
+        int sxWhere = 0;
+        for (sxWhere = 0; sxWhere < colsrewindRoll.length; sxWhere++) {
+            if (colsrewindRoll[sxWhere].equals(type)){
+                break;
+            }
+        }
+        try {
+            List<Map<String, String>> list = new TDengineData().getTDengineData(MachineTypeEnum.REWINDROLL, sql);
+            if (list == null || list.size() == 0) {
+                log.info("查询的数据为null");
+            } else {
+                list.forEach(
+                        item -> {
+                            ts.add(item.get("ts"));
+                            sx.add(Double.parseDouble(item.get(type)));
+                        }
+                );
+            }
+            objects.add(ts);
+            objects.add(sx);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            log.info("SQL异常");
+        } catch (IOException e) {
+            e.printStackTrace();
+            log.info("连接异常");
+        }
+        return objects;
+    }
+
+
+
 }
 
 

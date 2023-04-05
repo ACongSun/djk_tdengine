@@ -7,6 +7,7 @@ import com.djk.TDengineData.service.AnnealingFurnaceService;
 import com.djk.TDengineData.mapper.AnnealingFurnaceMapper;
 import com.djk.TDengineData.utils.MachineTypeEnum;
 import com.djk.TDengineData.utils.TDengineData;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -21,7 +22,7 @@ import java.util.Map;
 * @description 针对表【annealing_furnace】的数据库操作Service实现
 * @createDate 2023-02-28 09:46:14
 */
-
+@Slf4j
 @Service
 public class AnnealingFurnaceServiceImpl extends ServiceImpl<AnnealingFurnaceMapper, AnnealingFurnace>
     implements AnnealingFurnaceService{
@@ -81,6 +82,44 @@ public class AnnealingFurnaceServiceImpl extends ServiceImpl<AnnealingFurnaceMap
             return "连接异常";
         }
     }
+
+
+    @Override
+    public ArrayList<Object> getHistoryList(String sql, String type) {
+        ArrayList<Object> objects = new ArrayList<>();
+        ArrayList<String> ts = new ArrayList<>();
+        ArrayList<Double> sx = new ArrayList<>();
+        String[] colsFurnace = MachineTypeEnum.getColsCastRoll(MachineTypeEnum.QUENCHINGFURNACE);
+        int sxWhere = 0;
+        for (sxWhere = 0; sxWhere < colsFurnace.length; sxWhere++) {
+            if (colsFurnace[sxWhere].equals(type)){
+                break;
+            }
+        }
+        try {
+            List<Map<String, String>> list = new TDengineData().getTDengineData(MachineTypeEnum.QUENCHINGFURNACE, sql);
+            if (list == null || list.size() == 0) {
+                log.info("查询的数据为null");
+            } else {
+                list.forEach(
+                        item -> {
+                            ts.add(item.get("ts"));
+                            sx.add(Double.parseDouble(item.get(type)));
+                        }
+                );
+            }
+            objects.add(ts);
+            objects.add(sx);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            log.info("SQL异常");
+        } catch (IOException e) {
+            e.printStackTrace();
+            log.info("连接异常");
+        }
+        return objects;
+    }
+
 }
 
 

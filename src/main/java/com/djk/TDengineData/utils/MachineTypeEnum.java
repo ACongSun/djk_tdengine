@@ -20,9 +20,9 @@ public enum MachineTypeEnum {
             case COLSCASTROLL:
                 return new String[]{"ts", "upRollMontorA", "upRollMontorLineV",
                         "downRollMontorA", "downRollMontorLineV",
-                        "pumpA", "pumpF", "RollA", "RollV", "inWaterT", "inWaterFN",
+                        "pumpA", "pumpF", "rollA", "rollV", "inWaterT", "inWaterFN",
                         "upRollWaterFN", "upRollWaterT", "upRollFlow", "downRollWaterFN",
-                        "downRollWaterT", "downRollFlow", "operationPreloadForce", "TransPreloadForce",
+                        "downRollWaterT", "downRollFlow", "operationPreloadForce", "transPreloadForce",
                         "rollTension", "rollDiameter", "tiWireSpeed", "withMaterialSpeed"};
             case REWINDROLL:
                 return new String[]{"ts","machineColsV", "openScrollD","rollWindD","unitTension","actualTension","openRollA","rollWindA","stripL","stripW","pressureStatonT"

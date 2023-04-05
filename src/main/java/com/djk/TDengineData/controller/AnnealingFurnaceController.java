@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 /**
  * @author 孙少聪
@@ -95,4 +96,13 @@ public class AnnealingFurnaceController {
         log.info("sevenAnneaFur" + isSucc + LocalDateTime.now());
         return isSucc;
     }
+
+    @GetMapping("/historyRange")
+    public ArrayList<Object> historyRange(String sql, String type){
+        ArrayList<Object> arrayList = annealingFurnaceService.getHistoryList(sql, type);
+        log.info("退火炉历史数据" + LocalDateTime.now());
+        return arrayList;
+    }
+
+
 }

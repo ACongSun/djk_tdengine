@@ -3,6 +3,11 @@ package com.djk.TDengineData.service;
 import com.djk.TDengineData.domain.OneCastRoll;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
 * @author Admin
 * @description 针对表【one_castroll】的数据库操作Service
@@ -15,4 +20,16 @@ public interface OneCastrollService extends IService<OneCastRoll> {
      * @return
      */
     String saveBatchOneCast(String sql, Integer machineNum);
+
+    /**
+     * 获取一段时间内的历史数据
+     */
+    ArrayList<Object> getHistoryList(String sql, String type);
+
+    /**
+     * 测试查询一段时间的数据
+     * @param sql
+     * @return
+     */
+//    ArrayList<Object> getalllist(String sql) throws SQLException, IOException;
 }

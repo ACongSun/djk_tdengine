@@ -1,5 +1,6 @@
 package com.djk.TDengineData.controller;
 
+import com.djk.TDengineData.domain.OneCastRoll;
 import com.djk.TDengineData.service.OneCastrollService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author 孙少聪
@@ -75,6 +78,13 @@ public class OneCastRollController {
         String isSucc = oneCastrollService.saveBatchOneCast(sql, 5);
         log.info("fiveCast" + isSucc + LocalDateTime.now());
         return isSucc;
+    }
+
+    @GetMapping("/historyRange")
+    public ArrayList<Object> historyRange(String sql, String type){
+        ArrayList<Object> arrayList = oneCastrollService.getHistoryList(sql, type);
+        log.info("铸轧机历史数据" + LocalDateTime.now());
+        return arrayList;
     }
 
 }
