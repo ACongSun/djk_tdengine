@@ -21,7 +21,7 @@ public enum MachineTypeEnum {
                 return new String[]{"ts", "upRollMontorA", "upRollMontorLineV",
                         "downRollMontorA", "downRollMontorLineV",
                         "pumpA", "pumpF", "rollA", "rollV", "inWaterT", "inWaterFN",
-                        "upRollWaterFN", "upRollWaterT", "upRollFlow", "downRollWaterFN",
+                        "upRollWaterFn", "upRollWaterT", "upRollFlow", "downRollWaterFn",
                         "downRollWaterT", "downRollFlow", "operationPreloadForce", "transPreloadForce",
                         "rollTension", "rollDiameter", "tiWireSpeed", "withMaterialSpeed"};
             case REWINDROLL:

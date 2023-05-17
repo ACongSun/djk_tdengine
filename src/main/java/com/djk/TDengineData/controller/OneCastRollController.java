@@ -82,6 +82,7 @@ public class OneCastRollController {
 
     @GetMapping("/historyRange")
     public ArrayList<Object> historyRange(String sql, String type){
+        System.out.println("打印type"+type);
         ArrayList<Object> arrayList = oneCastrollService.getHistoryList(sql, type);
         log.info("铸轧机历史数据" + LocalDateTime.now());
         return arrayList;
