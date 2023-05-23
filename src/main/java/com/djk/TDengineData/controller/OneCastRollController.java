@@ -33,7 +33,8 @@ public class OneCastRollController {
     @Async("asyncServiceExecutor")
     @GetMapping("/oneCast")
     public String oneCast(){
-        String sql = "SELECT * FROM t_3d8761c0928d11ed8fbe65289e32d77e where ts > now - 5s;";
+        //26f7a000928d11ed8fbe65289e32d77e  一号铸轧机
+        String sql = "SELECT * FROM t_26f7a000928d11ed8fbe65289e32d77e where ts > now - 5s;";
         String isSucc = oneCastrollService.saveBatchOneCast(sql, 1);
         log.info("oneCast" + isSucc + LocalDateTime.now());
         return isSucc;
@@ -43,6 +44,7 @@ public class OneCastRollController {
     @Async("asyncServiceExecutor")
     @GetMapping("/twoCast")
     public String twoCast(){
+        //t_31daa490928d11ed8fbe65289e32d77e  二号铸轧机
         String sql = "SELECT * FROM t_31daa490928d11ed8fbe65289e32d77e where ts > now - 5s;";
         String isSucc = oneCastrollService.saveBatchOneCast(sql, 2);
         log.info("twoCast" + isSucc + LocalDateTime.now());
@@ -54,6 +56,7 @@ public class OneCastRollController {
     @Async("asyncServiceExecutor")
     @GetMapping("/threeCast")
     public String threeCast(){
+        //t_3d8761c0928d11ed8fbe65289e32d77e 三号铸轧机
         String sql = "SELECT * FROM t_3d8761c0928d11ed8fbe65289e32d77e where ts > now - 5s;";
         String isSucc = oneCastrollService.saveBatchOneCast(sql, 3);
         log.info("threeCast" + isSucc + LocalDateTime.now());
@@ -64,7 +67,8 @@ public class OneCastRollController {
     @Async("asyncServiceExecutor")
     @GetMapping("/fourCast")
     public String fourCast(){
-        String sql = "SELECT * FROM t_48d24fe0928d11ed8fbe65289e32d77e where ts > now - 5s;";
+        //t_31daa490928d11ed8fbe65289e32d77e 四号铸轧机
+        String sql = "SELECT * FROM t_31daa490928d11ed8fbe65289e32d77e where ts > now - 5s;";
         String isSucc = oneCastrollService.saveBatchOneCast(sql, 4);
         log.info("fourCast" + isSucc + LocalDateTime.now());
         return isSucc;
@@ -74,7 +78,8 @@ public class OneCastRollController {
     @Async("asyncServiceExecutor")
     @GetMapping("/fiveCast")
     public String fiveCast(){
-        String sql = "SELECT * FROM t_58a64890928d11ed8fbe65289e32d77e where ts > now - 5s;";
+        //t_26f7a000928d11ed8fbe65289e32d77e 五号铸轧机
+        String sql = "SELECT * FROM t_26f7a000928d11ed8fbe65289e32d77e where ts > now - 5s;";
         String isSucc = oneCastrollService.saveBatchOneCast(sql, 5);
         log.info("fiveCast" + isSucc + LocalDateTime.now());
         return isSucc;
