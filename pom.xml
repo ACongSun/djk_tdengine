@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.djk</groupId>
     <artifactId>TDengineDate</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>5.23fixed</version>
     <name>TDengineDate</name>
     <description>Demo project for Spring Boot</description>
 
